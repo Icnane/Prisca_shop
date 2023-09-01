@@ -27,7 +27,7 @@ drop table if exists utilisateurs;
 /*==============================================================*/
 create table clients
 (
-   id_clients           int not null,
+   id_clients           int not null AUTO_INCREMENT,
    nom_prenom           varchar(254),
    adresse              varchar(254),
    telephone            int,
@@ -40,7 +40,7 @@ create table clients
 /*==============================================================*/
 create table couture
 (
-   id_couture           int not null,
+   id_couture           int not null AUTO_INCREMENT,
    id_utilisateur       int not null,
    id_modele            int not null,
    id_clients           int not null,
@@ -55,7 +55,7 @@ create table couture
 /*==============================================================*/
 create table depenses
 (
-   id_depense           int not null,
+   id_depense           int not null AUTO_INCREMENT,
    id_personnel         int,
    id_utilisateur       int not null,
    libelle              int,
@@ -69,7 +69,7 @@ create table depenses
 /*==============================================================*/
 create table mesures
 (
-   id_mesure            int not null,
+   id_mesure            int not null AUTO_INCREMENT,
    id_clients           int,
    id_modele            int not null,
    id_utilisateur       int not null,
@@ -87,7 +87,7 @@ create table mesures
 /*==============================================================*/
 create table modeles
 (
-   id_modele            int not null,
+   id_modele            int not null AUTO_INCREMENT,
    id_utilisateur       int not null,
    type_modele          varchar(254),
    nom_modele           varchar(254),
@@ -100,7 +100,7 @@ create table modeles
 /*==============================================================*/
 create table paiements
 (
-   id_paiement          int not null,
+   id_paiement          int not null AUTO_INCREMENT,
    id_utilisateur       int not null,
    id_couture           int,
    montant              float,
@@ -116,7 +116,7 @@ create table paiements
 /*==============================================================*/
 create table personnels
 (
-   id_personnel         int not null,
+   id_personnel         int not null AUTO_INCREMENT,
    id_utilisateur       int not null,
    nom_prenom           varchar(254),
    adresse              varchar(254),
@@ -130,7 +130,7 @@ create table personnels
 /*==============================================================*/
 create table rendez_vous
 (
-   id_rdv               int not null,
+   id_rdv               int not null AUTO_INCREMENT,
    id_utilisateur       int not null,
    id_clients           int not null,
    libelle              varchar(254),
@@ -143,7 +143,7 @@ create table rendez_vous
 /*==============================================================*/
 create table utilisateurs
 (
-   id_utilisateur       int not null,
+   id_utilisateur       int not null AUTO_INCREMENT,
    nom_prenom           varchar(254),
    telephone            int,
    sexe                 varchar(254),
